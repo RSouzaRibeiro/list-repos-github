@@ -42,9 +42,7 @@ class DetailsRepoActivity : AppCompatActivity() {
 
     private fun doBinds() {
         viewModel?.repo?.observe(this, Observer { repository ->
-
             initView(repository)
-
         })
 
         viewModel?.progress?.observe(this, Observer {

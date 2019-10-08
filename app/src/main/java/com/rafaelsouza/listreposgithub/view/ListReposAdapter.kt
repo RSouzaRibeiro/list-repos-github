@@ -8,7 +8,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.rafaelsouza.listreposgithub.R
 import com.rafaelsouza.listreposgithub.repository.model.GitHubRepos
+import com.squareup.picasso.NetworkPolicy
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_details_repo.*
 import kotlinx.android.synthetic.main.item_repos.view.*
+import kotlinx.android.synthetic.main.item_repos.view.profile_image
 
 class ListReposAdapter(val context: Context, val repos: List<GitHubRepos>) :
     RecyclerView.Adapter<ListReposAdapter.ViewHolder>() {
@@ -27,6 +31,13 @@ class ListReposAdapter(val context: Context, val repos: List<GitHubRepos>) :
 
         holder.itemView.txtNameRepo.text = repo.name.toUpperCase()
         holder.itemView.txtOwnerUserName.text = repo.owner?.login
+
+        Picasso.get()
+            .load(repo.owner?.avatar_url)
+            .resize(48, 48)
+            .networkPolicy(NetworkPolicy.NO_STORE)
+            .centerCrop()
+            .into(holder.itemView.profile_image)
 
         holder.itemView.setOnClickListener {
             val intent = Intent(context, DetailsRepoActivity::class.java)

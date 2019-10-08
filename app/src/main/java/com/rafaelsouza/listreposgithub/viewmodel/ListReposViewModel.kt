@@ -11,6 +11,8 @@ class ListReposViewModel : BaseViewModel {
     @Inject
     constructor()
 
+    constructor(p0: Any)
+
     var repos = MutableLiveData<ArrayList<GitHubRepos>>()
     var progress = MutableLiveData<Boolean>()
     var error = MutableLiveData<String>()
