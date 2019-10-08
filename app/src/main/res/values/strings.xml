@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ListReposGithub</string>
+    <string name="hint_search">Buscar Repositorios</string>
 </resources>
