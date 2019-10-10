@@ -61,19 +61,8 @@ class ListReposActivity : AppCompatActivity() {
     }
 
     private fun initRecycleView(result: ArrayList<GitHubRepos>) {
-        var layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        recyclerView.layoutManager = layoutManager
-        adapter = ListReposAdapter(this, result)
-        recyclerView.adapter = adapter
-        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-                super.onScrollStateChanged(recyclerView, newState)
-                val lastPosition = layoutManager.findLastVisibleItemPosition()
-                if (lastPosition >= (recyclerView.adapter?.itemCount?.minus(3)!!)) {
-
-                }
-            }
-        })
+        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        recyclerView.adapter = ListReposAdapter(this, result)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
