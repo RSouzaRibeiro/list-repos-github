@@ -15,4 +15,8 @@ Foi usado para fazer injeção de dependencia [Dagger 2](https://dagger.dev/).
 # Retrofit
 Foi usado  para consumir dados de uma API Rest [Retrofit](https://square.github.io/retrofit/).
 
+# Picasso
+Foi usado para carregar imagens via url remota [Picasso](https://square.github.io/picasso/).
+
+
 
